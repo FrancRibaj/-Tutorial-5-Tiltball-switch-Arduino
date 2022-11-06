@@ -1,0 +1,21 @@
+const int ledPin = 13;//the led attach to
+
+void setup()
+{ 
+  pinMode(ledPin,OUTPUT);//initialize the ledPin as an output
+  pinMode(2,INPUT); //initialize the pin 2 as an input
+  digitalWrite(2, HIGH); //we produce voltage in pin 2 so when we close the circuit with Tilt Ball Switch
+} 
+/******************************************/
+void loop() 
+{  
+  int digitalVal = digitalRead(2);
+  if(HIGH == digitalVal) // when we close the circuit by tilting the ball digitalVal will be equal to HIGH as a result the led will turn on
+  {
+    digitalWrite(ledPin,LOW);//turn the led off
+  }
+  else
+  {
+    digitalWrite(ledPin,HIGH);//turn the led on 
+  }
+}
